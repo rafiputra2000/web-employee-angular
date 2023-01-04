@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+$font-form : 'NunitoSans', sans-serif;
+
+p {
+    font-family: $font-form;
+    font-size: 17px;
+    color: #1A3586;;
+}
+
+h2{
+    font-family: $font-form;
+    font-size: 28px;
+    color: #1A3586;;
+}
+
+h3{
+    font-family: $font-form;
+    font-size: 20px;
+    color: #1A3586;;
+}
+
+h4{
+    font-family: $font-form;
+    font-size: 18px;
+    color: #1A3586;;
+}
+
+
+.border-detail {
+    border-right: 3px solid rgb(93, 7, 131);
+}
+
+.card {
+    border: 0;
+    border-bottom: #331ab1 10px solid;
+    border-top: #331ab1 10px solid;
+    outline: 6;
+
+}
+

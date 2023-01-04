@@ -1,0 +1,49 @@
+<section>
+  <div class="container">
+    <div class="row m-3 d-flex justify-content-center">
+      <div class="card m-3 py-3 w-75">
+        <div class="card-body">
+          <div class="row">
+            <h2 class="card-title text-center">Detail Profile</h2>
+            <div class="col-lg-6 mt-5 px-5 border-detail">
+              <div *ngIf="!employees.image; else elseBlock">
+                <img
+                class="img-fluid rounded-circle"
+                src="../../../../../assets/images/7309681.jpg"
+                alt=""
+              />
+              </div>
+              <ng-template #elseBlock><img
+                class="img-fluid rounded-circle"
+                src="{{ employees.image }}"
+                alt=""
+              /></ng-template>
+              
+              
+              <h3 class="mt-3 text-center">
+                <b>{{ employees.firstName }} {{ employees.lastName }}</b>
+              </h3>
+              <p class="text-center">{{ birthDate }}</p>
+            </div>
+            <div class="col-lg-6 mt-4">
+              <h4 class="mt-5 ms-3">
+                <b>Username : </b>{{ employees.username }}
+              </h4>
+              <h4 class="mt-3 ms-3"><b>Email : </b>{{ employees.email }}</h4>
+              <h4 class="mt-3 ms-3">
+                <b>Salary : </b>
+                {{ employees.tesSalary }}
+              </h4>
+              <h4 class="mt-3 ms-3"><b>Group : </b>{{ employees.group }}</h4>
+              <h4 class="mt-3 ms-3"><b>Status : </b>{{ employees.status }}</h4>
+              <h4 class="mt-3 ms-3">
+                <b>Description : </b>{{ employees.description }}
+              </h4>
+            </div>
+          </div>
+          <a href="#" class="btn btn-outline-primary m-5 mt-5">OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

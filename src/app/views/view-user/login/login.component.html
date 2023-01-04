@@ -1,0 +1,107 @@
+<section class="bg-login">
+  <div class="container p-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="">
+        <div class="card rounded-3 text-black layout-card">
+          <div class="row g-0">
+            <div class="col-12">
+              <div
+                class="d-flex align-items-center justify-content-center bg rounded-top"
+                style="min-height: 100px"
+              >
+                <div class="px-3 p-md-5 layout-img">
+                  <img
+                    src="../../../../assets/images/icon-login.png"
+                    class="img-fluid"
+                    alt="logo"
+                  />
+                  <h5 class="mt-3 text-center font-login1">
+                    <b> DASHBOARD ADMIN</b>
+                  </h5>
+                </div>
+              </div>
+
+              <div class="card-body p-md-2 mx-md-4">
+                <div class="text-center">
+                  <p class="mb-4 font-login">Please login to your account</p>
+                </div>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <!-- <div class="textbox">
+                    <input
+                      class="m-3"
+                      spellcheck="false"
+                      placeholder="username"
+                      id="floatingInput"
+                      type="text"
+                      formControlName="username"
+                    />
+                    <span class="icon"><i class="bi bi-fire"> </i></span>
+                    <span class="aestrix"></span>
+                  </div> -->
+
+                  <div class="form-outline mb-3 mt-3">
+                    <label class="form-label font-login" for="form2Example11"
+                      ><b>Username</b>
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="floatingInput"
+                      formControlName="username"
+                      placeholder="username"
+                      [ngClass]="{ 'is-invalid': isFormValid('username') }"
+                    />
+                  </div>
+                  <app-validation-message
+                    [control]="loginForm.get('username')"
+                    [field]="'username'"
+                  ></app-validation-message>
+
+                  <div class="form-outline mb-3">
+                    <label class="form-label font-login" for="form2Example22"
+                      ><b>Password</b>
+                    </label>
+                    <input
+                      class="form-control pass-key"
+                      id="floatingPassword"
+                      placeholder="Password"
+                      formControlName="password"
+                      [type]="showPassword ? 'text' : 'password'"
+                      [ngClass]="{ 'is-invalid': isFormValid('password') }"
+                    />
+                    <div (click)="onShowPassword()">
+                      <span class="show font-login2">
+                        <i
+                          class="bi mt-3"
+                          [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+                        ></i>
+                      </span>
+                      <span *ngIf="showPassword; else hidePassword"
+                        >Hide Password</span
+                      >
+                      <ng-template #hidePassword>Show Password</ng-template>
+                    </div>
+                    <app-validation-message
+                      [control]="loginForm.get('password')"
+                      [field]="'password'"
+                    ></app-validation-message>
+                  </div>
+
+                  <div class="text-center pt-1 mb-2 pb-1">
+                    <button
+                      class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                      (click)="onSubmit()"
+                    >
+                      Log in
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

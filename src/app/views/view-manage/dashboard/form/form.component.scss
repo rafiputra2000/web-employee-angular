@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+$font-form : 'NunitoSans', sans-serif;
+
+.card-body{
+    margin-left: 30px;
+}
+
+.font-head {
+    font-family: $font-form;
+    font-weight: 600;
+    font-size: 23px;
+    color: #1A3586;;
+}
+
+.font-form {
+    font-family: $font-form;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1A3586;;
+}
+
+.font-form1 {
+    font-family: $font-form;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1A3586;;
+}
+
+.card {
+    border: 0;
+    border-bottom: #331ab1 10px solid;
+    outline: 6;
+
+}
+
+.form-control {
+    border: 0;
+    border-bottom: #331ab1 3px solid;
+    outline: 6;
+    font-family: $font-form;
+    font-size: 15px;
+
+}

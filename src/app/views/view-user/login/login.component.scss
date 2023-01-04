@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+$font-form: "NunitoSans", sans-serif;
+
+.font-login {
+  font-family: $font-form;
+  font-size: 17px;
+  color: #1a3586;
+}
+.font-login1 {
+  font-family: $font-form;
+  font-size: 20px;
+  color: #1a3586;
+}
+.font-login2 {
+  font-family: $font-form;
+  font-size: 13px;
+  color: #1a3586;
+}
+
+.layout-card {
+  max-width: 35%;
+  margin: auto;
+}
+
+.gradient-custom-2 {
+  background: #fccb90;
+  background: -webkit-linear-gradient(to right, #649eea, #e7aa49);
+  background: linear-gradient(to right, #649eea, #e7aa49);
+}
+
+// @media screen and (min-width: 767px) and (max-width: 1023) {
+
+// }
+@media only screen and (max-width: 767px) {
+  .layout-card {
+    max-width: 60%;
+  }
+
+  .layout-img{
+    margin: 30px;
+
+  }
+
+
+}
+// @media (min-width: 768px) {
+//     .gradient-form {
+//     height: 100vh !important;
+//     }
+//     }
+
+// @media (min-width: 769px) {
+//         .gradient-custom-2 {
+//         border-top-right-radius: .3rem;
+//         border-bottom-right-radius: .3rem;
+//         }
+//     }
+
+img {
+  width: 400px;
+}
+
+.bg {
+  background-color: #f1e1d0;
+}
+
+.logo {
+  width: 125px;
+}
+
+.logo1 {
+  width: 350px;
+  margin: auto;
+}
+
+.card-custom {
+  min-width: 100px;
+  min-height: 200px;
+}
+
+.bg-login {
+  background: url("../../../../assets/images/bg-login1.png");
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  border: 0;
+  border-bottom: #331ab1 10px solid;
+  outline: 6;
+}
+
+.form-control {
+  border: 0;
+  border-bottom: #331ab1 3px solid;
+  outline: 6;
+}
+
+.textbox{
+  position: relative;
+}
+
+.textbox input{
+  width: 260px;
+  height: 64px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid blue ;
+  padding: 0 20px 0 20px;
+  font-size: 17px;
+  color: rgb (255 255 255 / 96%);
+  outline: none;
+}
+
+.textbox input:focus ~ .icon {
+  opacity: 1;
+  
+}
+
+.textbox input::placeholder {
+  color:  rgba(10, 0, 0, 0.5);
+  
+}
+
+.textbox input:valid {
+  border-color: #26dfae;
+}
+
+.textbox .asterix{
+  position: absolute;
+  top: 21px;
+  right: 20px;
+  font-size: 22px;
+  pointer-events: none;
+  
+}
+
+.textbox .icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  margin-top: -12px;
+  opacity: 0.5;
+}
+
+.textbox :is(input:valid) 
+~ .asterix { opacity: 0;}
+
+@keyframes shake {
+  0%, 100% { translate: 0; } 
+  25% { translate: 8px 0; } 
+  75% { translate: -8px 0; }
+}
+
+.textbox input:valid,
+.textbox input:valid
+~ :is(.asterix, .icon){
+  animation: none;
+}
+
+.textbox
+:is(input, .icon, .asterix){
+  animation: shake 0.1635s 0s 3;
+}

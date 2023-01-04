@@ -1,0 +1,252 @@
+<div class="card mt-5 mb-3 m-5 p-3">
+  <div class="card-border text-center mt-3 mb-5 font-head">
+    Form Registrasion
+  </div>
+  <form [formGroup]="employeeGroup" class="card-body">
+    <div class="row mb-3">
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Username</label
+        >
+        <div class="col-lg-8">
+          <input
+            type="text"
+            class="form-control form-input-custom"
+            id="formLabel1"
+            name="username"
+            placeholder="Username"
+            formControlName="username"
+            [ngClass]="{ 'is-invalid': isFormValid('username') }"
+          />
+        </div>
+        <app-validation-message
+          [control]="employeeGroup.get('username')"
+          [field]="'username'"
+        ></app-validation-message>
+      </div>
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Email</label
+        >
+        <div class="col-lg-8">
+          <input
+            type="text"
+            class="form-control form-input-custom"
+            id="formLabel1"
+            name="email"
+            placeholder="Email@gmail.com"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': isFormValid('email') }"
+          />
+        </div>
+        <app-validation-message
+          [control]="employeeGroup.get('email')"
+          [field]="'email'"
+        ></app-validation-message>
+      </div>
+    </div>
+    <div class="row mb-3 align-items-start">
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >First Name</label
+        >
+        <div class="col-lg-8">
+          <input
+            type="text"
+            class="form-control form-input-custom"
+            id="formLabel1"
+            name="firstName"
+            placeholder="First Name"
+            formControlName="firstName"
+            [ngClass]="{ 'is-invalid': isFormValid('firstName') }"
+          />
+        </div>
+        <app-validation-message
+          [control]="employeeGroup.get('firstName')"
+          [field]="'firstName'"
+        ></app-validation-message>
+      </div>
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Last Name</label
+        >
+        <div class="col-lg-8">
+          <input
+            type="text"
+            class="form-control form-input-custom"
+            id="formLabel1"
+            name="lastName"
+            placeholder="Last Name"
+            formControlName="lastName"
+            [ngClass]="{ 'is-invalid': isFormValid('lastName') }"
+          />
+        </div>
+        <app-validation-message
+          [control]="employeeGroup.get('lastName')"
+          [field]="'lastName'"
+        ></app-validation-message>
+      </div>
+    </div>
+    <div class="row mb-3 align-items-start">
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Birth Date</label
+        >
+        <div class="col-lg-8">
+          <input
+            type="date"
+            class="form-control form-input-custom"
+            id="formLabel1"
+            name="birthDate"
+            placeholder="xxxxxxxxx"
+            formControlName="birthDate"
+            [ngClass]="{ 'is-invalid': isFormValid('birthDate') }"
+            max="{{ maxDate }}"
+          />
+        </div>
+        <app-validation-message
+          [control]="employeeGroup.get('birthDate')"
+          [field]="'fbirthDate'"
+        ></app-validation-message>
+      </div>
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Salary</label
+        >
+        <div class="col-lg-8">
+          <input
+            type="text"
+            class="form-control form-input-custom"
+            id="formLabel1"
+            name="tesSalary"
+            placeholder="Salary"
+            formControlName="tesSalary"
+            [(ngModel)]="basicSalaryFormat"
+            (change)="changeConvertRp()"
+            [ngClass]="{ 'is-invalid': isFormValid('tesSalary') }"
+          />
+        </div>
+        <app-validation-message
+          [control]="employeeGroup.get('tesSalary')"
+          [field]="'tesSalary'"
+        ></app-validation-message>
+      </div>
+    </div>
+    <div class="row mb-3 align-items-start">
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Group</label
+        >
+        <div class="col-lg-7">
+          <input
+            class="form-control"
+            list="datalistOptions"
+            id="exampleDataList"
+            placeholder="Departement"
+            formControlName="group"
+            [ngClass]="{ 'is-invalid': isFormValid('group') }"
+          />
+          <datalist id="datalistOptions">
+            <option value="Digital Banking Delivery"></option>
+            <option value="Digital Banking Product"></option>
+            <option value="IT Infrastruktur"></option>
+            <option value="IT Application Development"></option>
+            <option value="IT Application Supports"></option>
+            <option value="IT Architecture"></option>
+            <option value="IT Strategy"></option>
+            <option value="Enterprise Data Analytics"></option>
+            <option value="SORH Information Technology"></option>
+            <option value="CISO Office"></option>
+          </datalist>
+          <app-validation-message
+            [control]="employeeGroup.get('group')"
+            [field]="'group'"
+          ></app-validation-message>
+        </div>
+      </div>
+      <div class="col-lg-6 row">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Status</label
+        >
+        <div class="col-lg-8 mt-2">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="Permanent"
+              value="Permanent"
+              formControlName="status"
+            />
+            <label class="form-check-label font-form1" for="Permanent"
+              >Permanent</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="Contract"
+              value="Contract"
+              formControlName="status"
+            />
+            <label class="form-check-label font-form1" for="Contract"
+              >Contract</label
+            >
+          </div>
+        </div>
+        <app-validation-message
+          [control]="employeeGroup.get('status')"
+          [field]="'status'"
+        ></app-validation-message>
+      </div>
+    </div>
+    <div class="row mb-3 align-items-start">
+      <div class="col-lg-8">
+        <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+          >Description</label
+        >
+        <textarea
+          class="col-lg-8 form-control"
+          id="colFormLabel"
+          rows="3"
+          placeholder="Description"
+          formControlName="description"
+          [ngClass]="{ 'is-invalid': isFormValid('Description') }"
+        ></textarea>
+
+        <app-validation-message
+          [control]="employeeGroup.get('Description')"
+          [field]="'Description'"
+        ></app-validation-message>
+      </div>
+    </div>
+
+    <div class="image-upload col-md-9 mb-5 mt-5 row">
+      <label for="colFormLabel" class="col-lg-2 col-form-label font-form"
+        >Image</label
+      >
+      <!-- <img [src]="images" style="max-width:300px;max-height:300px"/> -->
+      <input
+        name="image"
+        formControlName="image"
+        type="file"
+        (change)="readUrl($event)"
+      />
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-outline-primary float-end me-5"
+      (click)="onSubmit()"
+    >
+      Save
+    </button>
+    <a
+      routerLink="/view"
+      type="button"
+      class="btn btn-outline-danger float-end me-5"
+    >
+      Cancel
+    </a>
+  </form>
+</div>

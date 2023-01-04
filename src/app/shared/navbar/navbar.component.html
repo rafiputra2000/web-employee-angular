@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg py-3 gradient-custom-2 sticky-top">
+  <div class="container">
+    <a routerLink="/view" class="navbar-brand fw-semibold text-white">
+      <img src="../../../assets/images/logo-nav.png" alt=""
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navmenu"
+      color="white"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Toolbar -->
+    <div class="collapse navbar-collapse text-white mt-3" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a routerLink="/view" class="nav-link text-white">list</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/view/form" class="nav-link text-white">Form</a>
+        </li>
+      </ul>
+      <button class="btn btn-primary" (click)="logout()">Log Out</button>
+    </div>
+  </div>
+</nav>
